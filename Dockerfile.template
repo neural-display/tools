@@ -1,0 +1,22 @@
+FROM balenalib/%%BALENA_MACHINE_NAME%%
+
+# turn on systemd
+ENV INITSYSTEM on
+
+RUN apt-get update && apt-get install -yq --no-install-recommends \
+  curl wget file cron unzip tzdata && \
+  apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Set Timezone
+ENV TZ=Asia/Ho_Chi_Minh
+RUN echo $TZ > /etc/timezone && dpkg-reconfigure tzdata
+
+WORKDIR /usr/src/app
+
+COPY . ./
+RUN chmod -R +x ./*.sh
+
+# CMD ["/bin/bash", "start.sh"]
+
+# Keep container alive not `restart-loop` because app do nothing on foreground
+CMD tail -f /dev/null
