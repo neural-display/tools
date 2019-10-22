@@ -2,7 +2,7 @@
 
 **List of apps**:
 
-1. Take screenshot: Capture screen display to picture file and upload to Dropbox - `See configuration for Dropbox upload`
+1. [Take screenshot](https://github.com/ThinhPhan/raspi2bmp): Capture screen display to picture file and upload to Dropbox - `See configuration for Dropbox upload`
 2. [Dropbox Uploader](https://github.com/andreafabrizi/Dropbox-Uploader) - Download / Upload files from Dropbox - only need **cURL**
 
 ## Quick Install
